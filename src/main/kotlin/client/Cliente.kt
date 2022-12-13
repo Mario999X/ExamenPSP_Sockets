@@ -23,6 +23,7 @@ fun main() {
 
     var salida = false
 
+    // Si queremos que el cliente se desconecte de la app cuando quiera
     while (!salida) {
         println(
             """
@@ -33,6 +34,7 @@ fun main() {
         """.trimIndent()
         )
 
+        // Leemos la opcion escogida y enviamos el request, indicando el tipo y el contenido
         val opcion = readln().toIntOrNull()
         when (opcion) {
             1 -> {
@@ -66,6 +68,7 @@ fun main() {
             }
         }
 
+        // Evitamos la conexion con el servidor si la opcion no lo necesita
         try {
             if (opcion == null || opcion <= 0 || opcion >= 4){
                 println("---")
@@ -84,7 +87,9 @@ fun main() {
                 // Esperamos la respuesta del servidor
                 val response = json.decodeFromString<Response<String>>(receiveResponse.readUTF())
 
-                println("Respuesta del servidor:\t$response\n")
+                println("Respuesta del servidor:\t${response.content}\n")
+                //println("Respuesta del servidor:\t$response\n")
+
             }
 
         } catch (e: Exception) {

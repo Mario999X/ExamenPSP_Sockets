@@ -4,6 +4,7 @@ import models.Nave
 
 object CreadorNavesRandom {
 
+    // El id se le asignara en StarUnix haciendo uso de un atomicInteger
     fun init(): Nave {
         val tipo = getTipo()
         val salto = getSaltoHiper()

@@ -3,6 +3,7 @@ package models
 import kotlinx.serialization.Serializable
 import java.time.LocalDate
 
+// Importante el serializable (json)
 @Serializable
 data class Nave(
     var id: Int,

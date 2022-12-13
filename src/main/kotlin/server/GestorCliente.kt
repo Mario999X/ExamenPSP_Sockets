@@ -21,7 +21,7 @@ class GestorCliente(private val s: Socket, private val su: StarUnix) : Runnable 
     private val receiveRequest = DataInputStream(s.getInputStream())
 
     override fun run() {
-        // Leemos el dato del cliente
+        // Leemos el dato del cliente y actuamos segun el tipo de request
         val request = json.decodeFromString<Request<Nave>>(receiveRequest.readUTF())
 
         when (request.type) {
@@ -63,9 +63,11 @@ class GestorCliente(private val s: Socket, private val su: StarUnix) : Runnable 
                     "Error",
                     Response.Type.ERROR
                 )
+                // Enviamos la respuesta
                 sendResponse.writeUTF(json.encodeToString(response) + "\n")
             }
         }
+        // Importante cerrar el socket para evitar problemas.
         s.close()
     }
 }

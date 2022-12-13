@@ -26,8 +26,7 @@ La solucion que voy a aplicar va a ser muy parecida a la gestion de la clase
     Version Hilos: https://github.com/Mario999X/ClaseServidorHilos
     Version Corrutinas: https://github.com/Mario999X/ClaseServidorCorrutinas
 
-La solucion que aplique en el examen oficial es mas parecido a una
-especie de "productor-consumidor", dejo ejemplo:
+La solucion que aplique en el examen oficial es mas parecido a una especie de "productor-consumidor", dejo ejemplo:
 https://github.com/Mario999X/StarWarsServidorHilos
 */
 

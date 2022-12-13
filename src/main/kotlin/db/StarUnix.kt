@@ -13,6 +13,7 @@ class StarUnix {
 
     private val lock = ReentrantLock()
 
+    // Aplico el reentrantLock unicamente en la funcion critica, la de agregacion.
     fun add(item: Nave) {
         lock.withLock {
             contadorId.incrementAndGet()
