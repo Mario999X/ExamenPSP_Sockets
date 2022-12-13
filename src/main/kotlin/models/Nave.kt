@@ -3,7 +3,7 @@ package models
 import kotlinx.serialization.Serializable
 import java.time.LocalDate
 
-// Importante el serializable (json)
+// Importante el serializable (json) y en las data class de mensajes
 @Serializable
 data class Nave(
     var id: Int,
@@ -17,7 +17,7 @@ data class Nave(
     }
 
     override fun toString(): String {
-        return "Nave(id=$id, tipoNave=${tipoNave}, misilesProtonicos=$misilesProtonicos, saltoHiperEspacio=$saltoHiperEspacio, fechaCreacion='$fechaCreacion')"
+        return "Nave(id=$id, tipoNave=$tipoNave, misilesProtonicos=$misilesProtonicos, saltoHiperEspacio=$saltoHiperEspacio, fechaCreacion='$fechaCreacion')"
     }
 
 }
