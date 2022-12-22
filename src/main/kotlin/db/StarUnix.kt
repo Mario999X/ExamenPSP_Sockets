@@ -61,8 +61,6 @@ class StarUnix {
             lector.incrementAndGet()
             println("Obteniendo misiles")
 
-            //Thread.sleep(20000)
-
             depositarNaves.signalAll()
             lector.decrementAndGet()
             return misiles.toInt()
